@@ -4,33 +4,88 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:weightSum="4">
-    <Button
-        android:id="@+id/btnBusca"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Busca"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="5dp" />
-    <Button
+        <RelativeLayout
+            android:id="@+id/btnBusca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <ImageView
+                android:id="@+id/buscar"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/buscar"/>
+            <TextView
+                android:id="@+id/t1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/buscar"
+                android:layout_marginTop="-5sp"
+                android:textSize="18sp"/>
+        </RelativeLayout>
+    <RelativeLayout
         android:id="@+id/btnInsere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Insere"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="5dp" />
-    <Button
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/inserir"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/inserir"/>
+        <TextView
+            android:id="@+id/t2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inserir"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/inserir"
+            android:layout_marginTop="-5sp"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+    <RelativeLayout
         android:id="@+id/btnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="5dp" />
-
-    <Button
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/excluir"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/excluir"/>
+        <TextView
+            android:id="@+id/t3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Excluir"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/excluir"
+            android:layout_marginTop="-5sp"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+    <RelativeLayout
         android:id="@+id/btnLista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lista"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="5dp" />
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/listar"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/listar"/>
+        <TextView
+            android:id="@+id/t4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Listar"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/listar"
+            android:layout_marginTop="-5sp"
+            android:textSize="18sp"/>
+    </RelativeLayout>
 </LinearLayout>

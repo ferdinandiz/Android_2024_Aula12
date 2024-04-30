@@ -1,18 +1,21 @@
 package com.fer.aula12_webservice;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.fer.aula12_webservice.model.Pessoa;
+import com.fer.aula12_webservice.util.Aula12Util;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -24,7 +27,8 @@ import java.util.concurrent.Executors;
 
 public class BuscarActivity extends AppCompatActivity {
 
-    Button btnBuscar, btnInserir, btnDeletar, btnListar,btnBuscarInfo;
+    RelativeLayout btnBuscar, btnInserir, btnDeletar, btnListar;
+    Button btnBuscarInfo;
     EditText edID;
     TextView txtID, txtNome, txtTelefone;
 
@@ -45,7 +49,7 @@ public class BuscarActivity extends AppCompatActivity {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Handler handler = new Handler(Looper.getMainLooper());
 
-        btnBuscar.setEnabled(false);
+        Aula12Util.desativaComponente(getApplicationContext(), btnBuscar);
         btnInserir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

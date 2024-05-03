@@ -1,5 +1,6 @@
 package com.fer.aula12_webservice;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -51,25 +52,25 @@ public class BuscarActivity extends AppCompatActivity {
         btnInserir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(BuscarActivity.this, InserirActivity.class);
-//                startActivity(i);
-//                finish();
+                Intent i = new Intent(BuscarActivity.this, InserirActivity.class);
+                startActivity(i);
+                finish();
             }
         });
         btnDeletar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(BuscarActivity.this, DeletarActivity.class);
-//                startActivity(i);
-//                finish();
+                Intent i = new Intent(BuscarActivity.this, DeletarActivity.class);
+                startActivity(i);
+                finish();
             }
         });
         btnListar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(BuscarActivity.this, ListarActivity.class);
-//                startActivity(i);
-//                finish();
+                Intent i = new Intent(BuscarActivity.this, ListarActivity.class);
+                startActivity(i);
+                finish();
             }
         });
 

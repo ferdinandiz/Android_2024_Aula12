@@ -15,55 +15,47 @@ import com.fer.aula12_webservice.model.Pessoa;
 import java.util.List;
 
 public class PessoaAdapter extends RecyclerView.Adapter<PessoaAdapter.ViewHolder> {
-   private List<Pessoa> pessoas;
-   private Context context;
+   private List<Pessoa> mPessoas;
+   private Context mContext;
    private OnItemClickListener listener;
 
    public interface OnItemClickListener {
       void onItemClick(Pessoa pessoa);
    }
 
-   public PessoaAdapter(Context context, List<Pessoa> pessoaList, OnItemClickListener listener) {
-      this.pessoas = pessoaList;
-      this.context = context;
+   public PessoaAdapter(Context context, List<Pessoa> pessoas, OnItemClickListener listener) {
+      mPessoas = pessoas;
+      mContext = context;
       this.listener = listener;
    }
 
-   @NonNull
    @Override
-   public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-      View view = LayoutInflater.from(parent.getContext()).inflate(
-              R.layout.lista_item,
-              parent,
-              false
-      );
+   public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+      View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.lista_item, parent, false);
       return new ViewHolder(view, listener);
    }
 
    @Override
-   public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-      Pessoa pessoa = pessoas.get(position);
-      holder.texto.setText(
-              pessoa.getId() + " - "
-              + pessoa.getNome() + " - "
-              + pessoa.getTelefone()
-      );
+   public void onBindViewHolder(ViewHolder holder, int position) {
+      Pessoa pessoa = mPessoas.get(position);
+      holder.texto.setText(pessoa.getId() + " - " + pessoa.getNome() + " - " + pessoa.getTelefone());
    }
 
    @Override
    public int getItemCount() {
-      return pessoas.size();
+      return mPessoas.size();
    }
 
    public class ViewHolder extends RecyclerView.ViewHolder {
       public TextView texto;
+
       public ViewHolder(View itemView, OnItemClickListener listener) {
          super(itemView);
          texto = itemView.findViewById(android.R.id.text1);
-         itemView.setOnClickListener(view -> {
+         itemView.setOnClickListener(v -> {
             int position = getAdapterPosition();
-            if(position != RecyclerView.NO_POSITION){
-               listener.onItemClick(pessoas.get(position));
+            if (position != RecyclerView.NO_POSITION) {
+               listener.onItemClick(mPessoas.get(position));
             }
          });
       }

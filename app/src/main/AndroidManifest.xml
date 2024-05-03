@@ -23,6 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DeletarActivity" />
+        <activity android:name=".InserirActivity" />
+        <activity android:name=".ListarActivity" />
+        <activity android:name=".AtualizarActivity" />
     </application>
 
 </manifest>
